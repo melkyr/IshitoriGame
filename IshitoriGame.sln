@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IshitoriLibrary", "IshitoriLibrary\IshitoriLibrary.csproj", "{DED8D1B1-A79F-4893-BFCB-6DC3DEEADCE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IshitoriLibrary", "IshitoriLibrary\IshitoriLibrary.csproj", "{DED8D1B1-A79F-4893-BFCB-6DC3DEEADCE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IshitoriConsole", "IshitoriConsole\IshitoriConsole.csproj", "{937F1B09-4316-4334-95D3-E767D0CB1A62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IshitoriConsole", "IshitoriConsole\IshitoriConsole.csproj", "{937F1B09-4316-4334-95D3-E767D0CB1A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IshitoriGameAPI", "IshitoriGameAPI\IshitoriGameAPI.csproj", "{011A234A-345D-4D3D-B1FF-101A509E612B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{937F1B09-4316-4334-95D3-E767D0CB1A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{937F1B09-4316-4334-95D3-E767D0CB1A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{937F1B09-4316-4334-95D3-E767D0CB1A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011A234A-345D-4D3D-B1FF-101A509E612B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011A234A-345D-4D3D-B1FF-101A509E612B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011A234A-345D-4D3D-B1FF-101A509E612B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011A234A-345D-4D3D-B1FF-101A509E612B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

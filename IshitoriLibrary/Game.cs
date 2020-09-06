@@ -1,6 +1,7 @@
 ﻿using IshitoriLibrary.Logic;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text;
 
 namespace IshitoriLibrary
@@ -28,19 +29,19 @@ namespace IshitoriLibrary
                 piecesTaken = _actualStatus.SmartComputerRetrieves();
             }
             
-            RecalculatePiecesLeft(piecesTaken);
+            GameLogic.RecalculatePiecesLeft(piecesTaken, _actualStatus);
             _actualStatus.IsCpTurn = false;
             _actualStatus.CpRetrievedPieces = piecesTaken;
+            IsGameFinished();
         }
-        public void RecalculatePiecesLeft(int grabbedPieces)
-        {
 
-           _actualStatus.PiecesLeft-= grabbedPieces;
-        }
 
         public bool IsGameFinished()
         {
-            return _actualStatus.PiecesLeft <1;
+            bool isFinished = false;
+            isFinished=_actualStatus.PiecesLeft < 1;
+            _actualStatus.IsGameOver = isFinished;
+            return isFinished;
         }
 
         public Game(int[] intervalToPlay)
@@ -51,6 +52,8 @@ namespace IshitoriLibrary
                 GameStatus newStatus = new GameStatus();
                 _actualStatus = newStatus;
             }
+            //Sort the actual values before trying to avoid errors
+            Array.Sort(intervalToPlay);
             _actualStatus.PiecesLeft = new Random().Next(intervalToPlay[0], intervalToPlay[1]);
             _actualStatus.InitialPieces = ActualStatus.PiecesLeft;
 

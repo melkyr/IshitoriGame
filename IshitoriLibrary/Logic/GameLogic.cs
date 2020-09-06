@@ -32,10 +32,14 @@ namespace IshitoriLibrary.Logic
         public static int SmartComputerRetrieves(this GameStatus currentGame)
         {
             int piecesToGrab=0;
+            if (currentGame.PiecesLeft==1)
+            {
+                piecesToGrab = 1;
+            }
             //Lets try our best to get into the closer mult*4 integer
             if ((currentGame.PiecesLeft-1)%4==0 && currentGame.LastPlayerRetrieval==0)
             {
-                
+                piecesToGrab = new Random().Next(1, 4);
 
             }
             //If last turn we were on a special number
@@ -55,7 +59,7 @@ namespace IshitoriLibrary.Logic
             {
                 piecesToGrab = 3;
             }
-            else if (currentGame.PiecesLeft < 4)
+            else if (currentGame.PiecesLeft < 4 && currentGame.PiecesLeft>1)
             {
                 piecesToGrab = currentGame.PiecesLeft - 1;
             }
@@ -65,6 +69,12 @@ namespace IshitoriLibrary.Logic
                 piecesToGrab = new Random().Next(1, 4);
             }
             return piecesToGrab;
+        }
+
+        public static void RecalculatePiecesLeft(int grabbedPieces, GameStatus status)
+        {
+
+            status.PiecesLeft -= grabbedPieces;
         }
     }
 }
