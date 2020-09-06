@@ -36,7 +36,7 @@ namespace IshitoriConsole
                 if (_currentGame.ActualStatus.IsCpTurn)
                 {
                     _currentGame.MakeCpMove();
-                    Console.WriteLine($"Master Ishitori retrieves {_currentGame.CpRetrievedPieces}");
+                    Console.WriteLine($"Master Ishitori retrieves {_currentGame.ActualStatus.CpRetrievedPieces}");
                 }
                 else
                 {

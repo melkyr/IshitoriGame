@@ -33,8 +33,8 @@ namespace IshitoriConsole
         {
 
             
-            GameStatus currentStatus = new GameStatus();
-            Game newGame = new Game(currentStatus, AskDificultToUser());
+            
+            Game newGame = new Game( AskDificultToUser());
             return newGame;
 
         }

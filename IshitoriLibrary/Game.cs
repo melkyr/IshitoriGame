@@ -30,7 +30,7 @@ namespace IshitoriLibrary
             
             RecalculatePiecesLeft(piecesTaken);
             _actualStatus.IsCpTurn = false;
-            CpRetrievedPieces = piecesTaken;
+            _actualStatus.CpRetrievedPieces = piecesTaken;
         }
         public void RecalculatePiecesLeft(int grabbedPieces)
         {
@@ -43,16 +43,20 @@ namespace IshitoriLibrary
             return _actualStatus.PiecesLeft <1;
         }
 
-        public Game(GameStatus status,int[] intervalToPlay)
+        public Game(int[] intervalToPlay)
         {
-            
-            _actualStatus = status;
+
+            if (_actualStatus == null)
+            {
+                GameStatus newStatus = new GameStatus();
+                _actualStatus = newStatus;
+            }
             _actualStatus.PiecesLeft = new Random().Next(intervalToPlay[0], intervalToPlay[1]);
             _actualStatus.InitialPieces = ActualStatus.PiecesLeft;
 
         }
 
-        public int CpRetrievedPieces { get; set; }
+        
 
     }
 }

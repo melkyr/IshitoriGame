@@ -11,5 +11,6 @@ namespace IshitoriLibrary.Logic
         public int LastPlayerRetrieval { get; set; } = 0;
         public int LastCpRetrieval { get; set; } = 0;
         public int InitialPieces { get; set; }
+        public int CpRetrievedPieces { get; set; }
     }
 }
